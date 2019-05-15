@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  publicPath: '/quiz/dist/',
   filenameHashing: false,
   configureWebpack: {
     resolve: {
