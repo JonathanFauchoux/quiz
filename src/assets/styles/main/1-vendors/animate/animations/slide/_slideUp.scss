@@ -1,0 +1,21 @@
+/*===================================================================================*/
+/*    Animate.CSS - Slide In Up
+/*===================================================================================*/
+
+@keyframes slideUp
+{
+	0% {
+    overflow-y: hidden;
+	}
+  1%{
+    max-height: 100vh;
+  }
+	100% {
+    max-height: 0;
+	}
+}
+
+.slideUp
+{
+	@include animate-prefixer(animation-name, slideUp);
+}

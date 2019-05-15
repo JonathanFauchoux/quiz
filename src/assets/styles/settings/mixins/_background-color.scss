@@ -1,0 +1,9 @@
+@mixin background-color($color, $color-hover: shade($color, 15%)){
+  background-color: $color;
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active{
+    background-color: $color-hover;
+  }
+}

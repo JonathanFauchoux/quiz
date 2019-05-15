@@ -1,0 +1,9 @@
+/// Reset list defaults styles
+/// @group Global
+/// @author Pierre Lovenfosse
+
+@mixin no-type-list(){
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

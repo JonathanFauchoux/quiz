@@ -1,0 +1,33 @@
+/*===================================================================================*/
+/*    Animate.CSS - Default Settings
+/*===================================================================================*/
+
+// Base module settings
+$base-duration					       : 700ms !default;
+$base-origin 					         : top center !default;
+$base-degrees 					       : 30deg !default;
+$base-fill-mode					       : both !default;
+$base-iteration-count			     : infinite !default;
+
+$base-timing-function-in		   : ease-in !default;
+$base-timing-function-out		   : ease-out !default;
+$base-timing-function-in-out	 : ease-in-out !default;
+
+$base-distance					       : 50px !default;
+$base-distance-big				     : 100px !default;
+
+// Rotate module settings
+$rotate-degrees 				       : 90deg !default;
+$rotate-degrees-max 			     : 200deg !default;
+$rotate-origin 					       : center center !default;
+
+// Flipper module settings
+$flipper-perspective			     : 400px !default;
+$flipper-translate 				     : 150px !default;
+$flipper-degrees 				       : 10deg !default;
+$flipper-degrees-max 			     : 90deg !default;
+
+// Hinge module settings
+$hinge-origin 					       : top left !default;
+$hinge-degrees-max 				     : 80deg !default;
+$hinge-translate 				       : 700px !default;

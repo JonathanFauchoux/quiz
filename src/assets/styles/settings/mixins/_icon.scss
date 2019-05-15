@@ -1,0 +1,25 @@
+/// Contain all needed properties for icon
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @see $font-families
+
+@mixin icon-base(){
+  margin-right:    .2em;
+  margin-left:     .2em;
+  font-size:       1.6rem;
+  text-align:      center;
+  text-decoration: inherit;
+  text-transform:  none;
+  speak: none;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon($content, $type: before){
+  &::#{$type}{
+    content: $content;
+    font-family: font-families(icons);
+  }
+}

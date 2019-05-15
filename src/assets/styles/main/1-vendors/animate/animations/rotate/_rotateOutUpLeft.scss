@@ -1,0 +1,23 @@
+/*===================================================================================*/
+/*    Animate.CSS - Rotate Out Up Left
+/*===================================================================================*/
+
+@keyframes rotateOutUpLeft
+{
+	0% {
+		transform-origin: left bottom;
+		transform: rotate(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform-origin: left bottom;
+		transform: rotate(- $rotate-degrees);
+		opacity: 0;
+	}
+}
+
+.rotateOutUpLeft
+{
+	@include animate-prefixer(animation-name, rotateOutUpLeft);
+}

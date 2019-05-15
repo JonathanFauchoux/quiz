@@ -1,0 +1,21 @@
+/*===================================================================================*/
+/*    Animate.CSS - Fade Out Down
+/*===================================================================================*/
+
+@keyframes fadeOutDown
+{
+	0% {
+		opacity: 1;
+		transform: translateY(0) translateZ(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY($base-distance * 2) translateZ(0);
+	}
+}
+
+.fadeOutDown
+{
+	@include animate-prefixer(animation-name, fadeOutDown);
+}

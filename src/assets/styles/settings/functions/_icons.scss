@@ -1,0 +1,3 @@
+@function icons($value){
+  @return get($icons, $value);
+}

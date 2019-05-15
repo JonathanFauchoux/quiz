@@ -1,0 +1,3 @@
+@function social-colors($value){
+  @return get($social-colors, $value);
+}

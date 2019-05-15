@@ -1,0 +1,3 @@
+@function layout($value){
+  @return get($layout, $value);
+}

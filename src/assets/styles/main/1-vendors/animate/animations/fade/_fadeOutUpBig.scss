@@ -1,0 +1,21 @@
+/*===================================================================================*/
+/*    Animate.CSS - Fade Out Up Big
+/*===================================================================================*/
+
+@keyframes fadeOutUpBig
+{
+	0% {
+		opacity: 1;
+		transform: translateY(0) translateZ(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(- $base-distance-big * 2) translateZ(0);
+	}
+}
+
+.fadeOutUpBig
+{
+	@include animate-prefixer(animation-name, fadeOutUpBig);
+}

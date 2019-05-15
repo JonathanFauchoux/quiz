@@ -1,0 +1,9 @@
+@function get($map, $key, $nested-key: null){
+  @if $nested-key != null{
+    $v: map-deep-get($map, $key, $nested-key);
+    @return $v;
+  } @else{
+    $v: map-get($map, $key);
+    @return $v;
+  }
+};

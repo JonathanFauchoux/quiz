@@ -1,0 +1,22 @@
+@function map-has-keys($map, $keys...){
+  @each $key in $keys{
+    @if not map-has-key($map, $key){
+      @return false;
+    }
+  }
+  @return true;
+}
+
+@function recursive-map-has-keys($map, $keyvalue){
+  @if type-of($map) == map{
+    @if map-has-key($map, $keyvalue){
+      @return true;
+    }
+    @each $key,$e in $map{
+      @if recursive-map-has-key($e, $keyvalue){
+        @return true;
+      }
+    }
+  }
+  @return false;
+}

@@ -1,0 +1,33 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.no-scrollY {
+  overflow-y : hidden;
+}
+
+.no-scrollX {
+  overflow-x: hidden;
+}
+
+.is-disabled {
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: default;
+}
+
+.is-hide {
+  display: none;
+}
+
+.is-visible {
+  display: block;
+}
+
+.hide-visually{
+  @include hide-visually;
+}
+
+.no-pointer{
+  pointer-events: none;
+}

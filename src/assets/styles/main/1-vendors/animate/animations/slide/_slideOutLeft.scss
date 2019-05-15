@@ -1,0 +1,20 @@
+/*===================================================================================*/
+/*    Animate.CSS - Slide Out Left
+/*===================================================================================*/
+
+@keyframes slideOutLeft
+{
+	0% {
+		transform: translate3d(0, 0, 0);
+		// visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+.slideOutLeft
+{
+	@include animate-prefixer(animation-name, slideOutLeft);
+}

@@ -1,0 +1,151 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Global | Variables | Partial
+/*===================================================================================*/
+
+// MEDIAQUERIES
+
+$pixel: .0625em !global;
+$screens: (
+    sm: ( min: 0, max   : 48em - $pixel), //0px -> 767px
+    md: ( min: 48em, max: 64em - $pixel), // 768px -> 1023px
+    lg: ( min: 64em, max: 90em), // 1024px -> 1440px
+    xl: ( min: 90em + $pixel, max: 1000em - $pixel) // 1441px-> 1599px
+) !global;
+
+// BREAKPOINTS
+
+$breakpoints: (
+  small        : new-breakpoint(min-width get($screens, sm, min) max-width get($screens, sm, max)),
+  medium       : new-breakpoint(min-width get($screens, md, min) max-width get($screens, md, max)),
+  large        : new-breakpoint(min-width get($screens, lg, min)),
+  xlarge       : new-breakpoint(min-width get($screens, xl, min)),
+  small-medium : new-breakpoint(min-width get($screens, sm, min) max-width get($screens, md, max)),
+  medium-large : new-breakpoint(min-width get($screens, md, min)),
+  large-only   : new-breakpoint(min-width get($screens, lg, min) max-width get($screens, lg, max))
+) !global;
+
+$default: (
+  primary: #424b5a,
+  secondary: #f2f5f7,
+  font: #a1aeb7
+) !default;
+
+// COLORS
+
+$colors: (
+  primary    : #5844f8,
+  secondary  : #da00b6,
+  font       : #000000,
+  foreground : #f8f8f8,
+  background : #ffffff,
+  success    : #4caf50,
+  warning    : #ff9800,
+  error      : #f44336,
+) !global;
+
+// SOCIAL COLORS
+
+$social-colors: (
+  amazon:     #ff9700,
+  apple:      #737373,
+  dribbble:   #ed4584,
+  dropbox:    #0d84de,
+  ebay:       #083790,
+  facebook:   #365397,
+  flickr:     #ea0066,
+  foursquare: #207dc5,
+  github:     #2f2f2f,
+  google:     #4285f4,
+  googleplus: #e0452c,
+  instagram:  #cd486b,
+  linkedin:   #006db3,
+  pinterest:  #ce1a19,
+  skype:      #00acf4,
+  twitter:    #00a9f1,
+  vimeo:      #48b6ed,
+  yelp:       #c30f00,
+  youtube:    #f33,
+) !global;
+
+// LAYOUT
+
+$layout: (
+  width         : 100%,
+  full-width    : 192rem,
+  max-width     : 144rem,
+  spacing       : 3rem,
+  border-radius : 0.5rem,
+  rounded       : 3rem,
+  border        : 1px solid darken(white, 20%)
+) !global;
+
+// ANIMATIONS
+
+$animations: (
+  duration: 300ms,
+  easing  : $ease-in-out-sine
+) !global;
+
+// FONTS | Names
+
+$roboto: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$opensans: "Opensans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$monospace: "Consolas", "Liberation Mono", "Courier", monospace;
+$icomoon: "Icomoon";
+
+// FONTS | FAMILIES
+
+$font-families: (
+  primary  : $roboto,
+  secondary: $roboto,
+  tertiary : $roboto,
+  code     : $monospace,
+  icons    : $icomoon
+) !global;
+
+// FONTS | FONT-WEIGHTS
+
+$font-weights: (
+  thin     : 100,
+  light    : 200,
+  book     : 300,
+  normal   : 400,
+  medium   : 500,
+  semibold : 600,
+  bold     : 700,
+  black    : 800,
+  fat      : 900
+) !global;
+
+// FONTS | SIZES
+
+$font-sizes: (
+  small : 1.2rem,
+  medium: 1.4rem,
+  large : 1.6rem
+) !global;
+
+// ICONS
+
+$icons: (
+  check        : "\e001",
+  cross        : "\e002",
+  menu         : "\e003",
+  chevron-up   : "\e010",
+  chevron-down : "\e011",
+  chevron-left : "\e012",
+  chevron-right: "\e013",
+  arrow-up     : "\e020",
+  arrow-down   : "\e021",
+  arrow-left   : "\e022",
+  arrow-right  : "\e023",
+  facebook     : "\e903",
+  twitter      : "\e902",
+  linkedin     : "\e904",
+  pinterest    : "\e901",
+  instagram    : "\e900"
+) !global;
+
+// OTHERS

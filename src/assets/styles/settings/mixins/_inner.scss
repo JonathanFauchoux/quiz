@@ -1,0 +1,8 @@
+/// Apply width to inner element
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @see layout
+
+@mixin inner($width: layout("max-width")){
+  @include container($width);
+}

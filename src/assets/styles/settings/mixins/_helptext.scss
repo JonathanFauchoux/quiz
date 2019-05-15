@@ -1,0 +1,12 @@
+/// Apply style for a help text with variables $colors and $font-weights
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @see $colors
+/// @see $font-weights
+
+@mixin helptext(){
+  font-size:   1rem;
+  font-style:  italic;
+  color:       colors("font");
+  font-weight: font-weights("bold");
+}

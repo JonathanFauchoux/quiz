@@ -1,0 +1,63 @@
+/// Modify the display of a <table> to a stack list
+/// @group Global
+/// @author Pierre Lovenfosse
+
+@mixin stack-table(){
+  display: block;
+
+  thead,
+  tbody,
+  th,
+  td,
+  tr{
+    display: block;
+  }
+
+  thead,
+  tbody{
+    border: none;
+  }
+
+  tfoot{
+    display: none;
+  }
+
+  thead tr{
+    @include hide-visually;
+    border: none;
+  }
+
+  tr{
+    border-right: layout("border");
+    border-left: layout("border");
+
+    &:first-child{
+      border-top: layout("border");
+    }
+
+    &:last-child{
+      border-bottom: layout("border");
+    }
+
+    &:nth-child(even){
+      background-color: darken(white, 5%);
+    }
+  }
+
+  td{
+    position: relative;
+    padding-left: 50% !important;
+    text-align: left;
+    border: none;
+
+    &::before{
+      position: absolute;
+      top: .8rem;
+      left: 1rem;
+      width: 45%;
+      font-weight: font-weights("bold");
+      content: attr(data-label);
+      white-space: nowrap;
+    }
+  }
+}

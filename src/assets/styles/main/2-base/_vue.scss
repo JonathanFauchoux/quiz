@@ -1,0 +1,159 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Base | Vue | Partial
+/*===================================================================================*/
+
+[v-cloak] { display: none }
+
+// Vue JS Fade
+
+$times: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000;
+
+@each $time in $times{
+  .delay-transition-#{$time}{
+    transition-delay: #{$time}ms;
+  }
+  .delay-animation-#{$time}{
+    animation-delay: #{$time}ms;
+  }
+  .duration-animation-#{$time}{
+    animation-duration: #{$time}ms;
+  }
+}
+
+// Vue Bar
+
+.vb{
+  $dragger-color: rgba(white, 0.1);
+  $dragger-color-hover: colors("primary");
+  $dragger-color-on-scroll: white;
+
+  -ms-overflow-style: none;
+
+  .vb-content{
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // Vb | Dragger
+
+  .vb-dragger {
+    @include hover{
+      .vb-dragger-styler {
+        @include media("small-medium"){
+          background-color: $dragger-color-hover;
+        }
+
+        @include media("large"){
+          background-color: $dragger-color-hover;
+        }
+      }
+    }
+
+    z-index: 5;
+    width: 1rem;
+    right: 0;
+    z-index: 1000;
+
+    // Vb | Dragger Style
+
+    .vb-dragger-styler {
+      @include add-transition;
+      @include media("small-medium"){
+        background-color: $dragger-color;
+      }
+
+      @include media("large"){
+        background-color: $dragger-color;
+      }
+
+      backface-visibility: hidden;
+      transform: rotate3d(0,0,0,0);
+
+      margin: .5rem .5rem .5rem 0;
+      border-radius: 2rem;
+      height: calc(100% - 1rem);
+      display: block;
+      width: 5px;
+    }
+  }
+
+  &.vb-scrolling-phantom{
+    .vb-dragger-styler {
+      @include media("small-medium"){
+        background-color: $dragger-color-on-scroll;
+      }
+
+      @include media("large"){
+        background-color: $dragger-color-on-scroll;
+      }
+    }
+  }
+
+  &.vb-dragging {
+    .vb-dragger-styler {
+      @include media("small-medium"){
+        background-color: $dragger-color-on-scroll;
+      }
+
+      @include media("large"){
+        background-color: $dragger-color-on-scroll;
+      }
+      height: 100%;
+    }
+  }
+
+  &.vb-dragging-phantom{
+    .vb-dragger-styler {
+      @include media("small-medium"){
+        background-color: $dragger-color-on-scroll;
+      }
+
+      @include media("large"){
+        background-color: $dragger-color-on-scroll;
+      }
+    }
+  }
+}
+
+// animations
+@keyframes stretchIn
+{
+	0% {
+		max-height: 0;
+    min-height: 0;
+    overflow: hidden !important;
+	}
+
+	100% {
+		max-height: 1000rem;
+    min-height: 100vh;
+    overflow: hidden !important;
+	}
+}
+
+.stretchIn
+{
+	@include animate-prefixer(animation-name, stretchIn);
+  animation-duration: 3s;
+}
+
+@keyframes stretchOut
+{
+	0% {
+		max-height: 1000rem;
+    min-height: 100vh;
+    overflow: hidden;
+	}
+
+	100% {
+		max-height: 0;
+    min-height: 0;
+    overflow: hidden;
+	}
+}
+
+.stretchOut
+{
+	@include animate-prefixer(animation-name, stretchOut);
+}

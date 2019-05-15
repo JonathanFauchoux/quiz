@@ -1,0 +1,7 @@
+@mixin add-box-shadow-center($color: rgba(black, 0.15)){
+  box-shadow: 0rem 0rem 4rem .2rem $color;
+}
+
+@mixin add-box-shadow-bottom($color: rgba(black, 0.1)){
+  box-shadow: 0rem 2rem 4rem .2rem $color;
+}

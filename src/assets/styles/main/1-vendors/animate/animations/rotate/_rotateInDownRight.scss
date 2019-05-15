@@ -1,0 +1,23 @@
+/*===================================================================================*/
+/*    Animate.CSS - Rotate In Down Right
+/*===================================================================================*/
+
+@keyframes rotateInDownRight
+{
+	0% {
+		transform-origin: right bottom;
+		transform: rotate($rotate-degrees);
+		opacity: 0;
+	}
+
+	100% {
+		transform-origin: right bottom;
+		transform: rotate(0);
+		opacity: 1;
+	}
+}
+
+.rotateInDownRight
+{
+	@include animate-prefixer(animation-name, rotateInDownRight);
+}

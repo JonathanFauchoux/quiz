@@ -1,0 +1,16 @@
+/// Apply a text decoration for an element with hover, focus, active states (and is-active classname)
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @param {String} $decoration - Main decoration
+/// @param {String} $decoration-hover [underline] - decoration for hover, focus, active (and is-active classname)
+
+@mixin text-decoration($decoration: none, $decoration-hover: underline){
+  text-decoration: $decoration;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active{
+    text-decoration: $decoration-hover;
+  }
+}

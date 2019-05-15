@@ -1,0 +1,23 @@
+/*===================================================================================*/
+/*    Animate.CSS - Rotate In Down Left
+/*===================================================================================*/
+
+@keyframes rotateInDownLeft
+{
+	0% {
+		transform-origin: left bottom;
+		transform: rotate(- $rotate-degrees);
+		opacity: 0;
+	}
+
+	100% {
+		transform-origin: left bottom;
+		transform: rotate(0);
+		opacity: 1;
+	}
+}
+
+.rotateInDownLeft
+{
+	@include animate-prefixer(animation-name, rotateInDownLeft);
+}

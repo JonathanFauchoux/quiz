@@ -1,0 +1,10 @@
+@mixin border-color($color, $color-hover: shade($color, 15%)){
+  border: 1px solid $color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active{
+    border: 1px solid $color-hover;
+  }
+}

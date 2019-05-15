@@ -1,0 +1,3 @@
+@function colors($value){
+  @return get($colors, $value);
+}

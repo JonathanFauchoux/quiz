@@ -1,0 +1,15 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Base | Icons | Partial
+/*===================================================================================*/
+
+@each $value, $content in $icons{
+  .icon-#{$value}{
+    @include icon(icons($value), "before");
+  }
+
+  .icon-linkedin{
+    margin-top: -2px;
+  }
+}

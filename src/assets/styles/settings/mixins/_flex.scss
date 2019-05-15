@@ -1,0 +1,26 @@
+/// Default Map for Flex mixin
+/// @type Map
+/// @group Global
+
+$default-flex-properties: (
+  display: flex,
+  flex-direction: row,
+  justify-content: flex-start,
+  align-items: center,
+  align-content: center,
+  flex-wrap: initial
+);
+
+/// Print css for flex display
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @param {Map} $flex-properties
+
+@mixin flex( $flex-properties: null ) {
+  @if $flex-properties != null {
+    $flex-properties: map-extend( $default-flex-properties, $flex-properties );
+  } @else {
+    $flex-properties: $default-flex-properties;
+  }
+  @include print-css( $flex-properties );
+}

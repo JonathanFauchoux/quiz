@@ -1,0 +1,15 @@
+/// Apply a text color for an element with hover, focus, active states (and is-active classname)
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @param {String} $color - Main color
+/// @param {String} $color-hover [shade($color, 15%)] - color for hover, focus, active (and is-active classname)
+
+@mixin text-color($color, $color-hover: shade($color, 15%)){
+  color: $color;
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active{
+    color: $color-hover;
+  }
+}

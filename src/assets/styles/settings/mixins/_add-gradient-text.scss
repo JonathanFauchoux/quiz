@@ -1,0 +1,16 @@
+@mixin add-gradient-text($color: colors("primary")){
+  background-image: linear-gradient(to right, $color 50%, colors("font") 50%);
+  background-position: right top;
+  background-size: 200%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  transition: background-position animations("duration")*2 animations("easing");
+
+  @include media("large"){
+    &:hover,
+    &:focus,
+    &:active{
+      background-position: left top;
+    }
+  }
+}

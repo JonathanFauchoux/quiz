@@ -1,0 +1,3 @@
+@function animations($value){
+  @return get($animations, $value);
+}

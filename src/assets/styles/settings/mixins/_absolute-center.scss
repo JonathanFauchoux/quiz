@@ -1,0 +1,14 @@
+@mixin absolute-center($type: center){
+  position: absolute;
+  @if $type == center{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  } @else if $type == horizontal{
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $type == vertical{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

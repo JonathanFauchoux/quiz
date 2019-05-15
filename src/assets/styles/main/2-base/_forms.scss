@@ -1,0 +1,180 @@
+// // @author : Pierre Lovenfosse
+// // @contributors : -
+// /*===================================================================================*/
+// /*  Base | Forms | Partial
+// /*===================================================================================*/
+
+$default-forms:(
+  margin        : get($layout, "spacing"),
+  padding       : get($layout, "spacing"),
+  border        : get($layout, "border"),
+  border-radius : get($layout, "border-radius")
+);
+
+$default-fieldset: (
+  padding    : get($default-forms, "padding"),
+  margin     : get($default-forms, "margin"),
+  background : transparent,
+  border     : get($default-forms, "border")
+);
+
+$default-legend: (
+  margin-left : 0.3rem,
+  padding     : 0 0.3rem,
+  background  : transparent,
+  font-size   : inherit,
+  font-weight : get($font-weights, "bold")
+);
+
+$default-label: (
+  display       : block,
+  margin-right  : get($default-forms, "margin"),
+  margin-bottom : get($default-forms, "margin")/2,
+  color         : get($default-forms, "color"),
+  font-size     : inherit,
+  font-weight   : get($font-weights, "bold")
+);
+
+$default-input-select: (
+  width            : 100%,
+  margin-bottom    : get($default-forms, "margin")/2,
+  padding          : get($default-forms, "padding")/2,
+  border           : get($default-forms, "border"),
+  border-radius    : get($default-forms, "radius"),
+  background-color : white,
+  color            : get($default-forms, "color"),
+  font-family      : inherit,
+  font-size        : inherit,
+  font-weight      : get($font-weights, "normal"),
+  transition       : all animations(duration) animations(easing),
+
+  hover: (
+    background-color : white,
+    outline          : 0,
+    box-shadow       : 0 0 .5rem tint(black, 60%)
+  ),
+
+  disabled: (
+    background-color : tint(black, 35%),
+    hover: (
+      border : 1px solid tint(black, 80%),
+    )
+  ),
+);
+
+$default-select: (
+  appearance : none,
+  arrow: (
+    color : colors(font)
+  )
+);
+
+$default-input: (
+  background : colors("background"),
+  outline    : 0,
+);
+
+$default-prefix: (
+  color      : colors("font"),
+  background : tint(black, 35%),
+  border     : get($default-forms, "border"),
+  padding    : get($default-forms, "padding") / 2
+);
+
+$default-textarea: (
+  max-width  : 100%,
+  min-height : 10rem,
+  resize     : vertical,
+  outline    : none
+);
+
+$default-search: (
+  width      : 25rem,
+  appearance : none
+);
+
+fieldset{
+  @include print-css($default-fieldset);
+}
+
+legend{
+  @include print-css($default-legend);
+}
+
+label{
+  @include print-css($default-label);
+}
+
+textarea{
+  @include print-css($default-textarea);
+}
+
+select{
+  @include print-css($default-input-select);
+  @include print-css($default-select);
+
+  display : inline;
+  cursor  : pointer;
+
+  &:hover,
+  &:focus {
+    @include print-css($default-input-select, "hover");
+  }
+
+  &:disabled,
+  &[readonly]{
+    @include print-css($default-input-select, "disabled");
+    cursor: not-allowed;
+
+    &:hover{
+      @include print-css($default-input-select, "disabled", "hover");
+    }
+  }
+
+  &[multiple]{
+    height: auto;
+  }
+
+  @if map-get($default-select, arrow) != transparent{
+    background-size     : 2rem 2rem;
+    background-position : right get($default-forms, "padding")/2 center;
+    background-repeat   : no-repeat;
+  }
+
+  // Hide the dropdown arrow
+  // shown in newer IE versions
+  //
+  &::-ms-expand{
+    display: none;
+  }
+}
+
+#{$all-text-inputs}{
+  @include print-css($default-input-select);
+  @include print-css($default-input);
+
+  display: inline;
+
+  &:hover,
+  &:focus {
+    @include print-css($default-input-select, "hover");
+  }
+
+  &:disabled,
+  &[readonly]{
+    @include print-css($default-input-select, "disabled");
+    cursor: not-allowed;
+
+    &:hover{
+      @include print-css($default-input-select, "disabled", "hover");
+    }
+  }
+}
+
+[type="search"]{
+  @include print-css($default-search);
+}
+
+.input-group{
+  margin-bottom : get($default-forms, "margin");
+}

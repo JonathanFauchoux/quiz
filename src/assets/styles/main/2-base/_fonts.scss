@@ -1,0 +1,110 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Global | Fonts | Partial
+/*===================================================================================*/
+
+/*
+  Google Font Example
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+*/
+
+$font-path: "~@/assets/fonts/";
+$font-formats: ('woff', 'woff2', 'ttf');
+
+$all-fonts: (
+  roboto: (
+    light: (
+      name        : "Roboto",
+      file        : "roboto/Light/Roboto-Light",
+      font-weight : 200,
+      font-style  : normal
+    ),
+    regular: (
+      name        : "Roboto",
+      file        : "roboto/Regular/Roboto-Regular",
+      font-weight : normal,
+      font-style  : normal
+    ),
+    medium: (
+      name        : "Roboto",
+      file        : "roboto/Medium/Roboto-Medium",
+      font-weight : 500,
+      font-style  : normal
+    ),
+    bold: (
+      name        : "Roboto",
+      file        : "roboto/Bold/Roboto-Bold",
+      font-weight : 600,
+      font-style  : normal
+    )
+  ),
+  opensans: (
+    regular: (
+      name        : "Opensans",
+      file        : "opensans/opensans-regular",
+      font-weight : normal,
+      font-style  : normal
+    ),
+    italic: (
+      name        : "Opensans",
+      file        : "opensans/opensans-italic",
+      font-weight : normal,
+      font-style  : italic
+    ),
+    bold: (
+      name        : "Opensans",
+      file        : "opensans/opensans-bold",
+      font-weight : 700,
+      font-style  : normal
+    ),
+    extrabold: (
+      name        : "Opensans",
+      file        : "opensans/opensans-extrabold",
+      font-weight : 800,
+      font-style  : normal
+    )
+  ),
+);
+
+$icon-formats: ('eot', 'woff', 'svg');
+$icon-fonts: (
+  icomoon: (
+    regular: (
+      name: "Icomoon",
+      file: "icomoon/icomoon",
+      font-weight: 400,
+      font-style: normal
+    )
+  )
+);
+
+
+@each $value, $font in $all-fonts{
+  @each $type, $map in $font{
+    $name:        get($map, "name");
+    $file:        $font-path + get($map, "file");
+    $font-weight: get($map, "font-weight");
+    $font-style:  get($map, "font-style");
+
+    @include font-face( $name, $file, $font-formats){
+      font-weight: $font-weight;
+      font-style:  $font-style;
+    };
+  }
+}
+
+@each $value, $font in $icon-fonts{
+  @each $type, $map in $font{
+    $name:        get($map, "name");
+    $file:        $font-path + get($map, "file");
+    $font-weight: get($map, "font-weight");
+    $font-style:  get($map, "font-style");
+
+    @include font-face($name, $file, $icon-formats){
+      font-weight: $font-weight;
+      font-style:  $font-style;
+    };
+  }
+}
+

@@ -1,0 +1,25 @@
+/*===================================================================================*/
+/*    Animate.CSS - Bounce Out Down
+/*===================================================================================*/
+
+@keyframes bounceOutDown
+{
+	0% {
+		transform: translateY(0);
+	}
+
+	20% {
+		opacity: 1;
+		transform: translateY(- $base-distance * 2);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY($base-distance-big * 2);
+	}
+}
+
+.bounceOutDown
+{
+	@include animate-prefixer(animation-name, bounceOutDown);
+}

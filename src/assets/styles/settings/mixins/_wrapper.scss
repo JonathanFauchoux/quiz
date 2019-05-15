@@ -1,0 +1,16 @@
+/// Apply width to wrapper element
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @see layout
+
+@mixin wrapper(){
+  @include container(layout("full-width"));
+  @include media("small-medium"){
+    padding-left: layout("spacing");
+    padding-right: layout("spacing");
+  }
+  @include media("large"){
+    padding-left: layout("spacing")*2;
+    padding-right: layout("spacing")*2;
+  }
+}

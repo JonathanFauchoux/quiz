@@ -1,0 +1,26 @@
+@mixin add-hover-underline($direction: left, $color: colors("primary"), $size: 1px){
+  position: relative;
+
+  &::after{
+    content: "";
+    display: block;
+    height: $size;
+    width: 100%;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    background-size: 200%;
+    background-position: right center;
+    background-image: linear-gradient(to $direction, rgba($color, 0) 50%, rgba($color, 1) 50%);
+    transition: background-position animations("duration")*2 animations("easing");
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active{
+    &::after{
+      background-position: left center;
+    }
+  }
+}

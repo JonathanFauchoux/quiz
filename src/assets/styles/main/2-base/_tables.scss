@@ -1,0 +1,92 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Base | Tables | Partial
+/*===================================================================================*/
+
+$default-table-values: (
+  width: 100%,
+  top: .8rem,
+  left: 1rem,
+  spacing: get($layout, "spacing"),
+  border: get($layout, "border"),
+  background-color: darken(white, 10%),
+  color: colors("font"),
+  font-weight: get($font-weights, "bold"),
+  text-align: left
+);
+
+$default-table-stripes: (
+  row: even,
+  background-color: darken(white, 5%)
+);
+
+$table-stripes: get($default-table-stripes, "row");
+
+$default-table: (
+  width: get($default-table-values, "width"),
+  margin-bottom: get($layout, "spacing"),
+  border-radius: get($layout, "border-radius"),
+  border-collapse: collapse
+);
+
+$default-thead-tfoot: (
+  border: get($default-table-values, "border"),
+  background-color: get($default-table-values, "background-color"),
+  color: get($default-table-values, "color"),
+  row: (
+    background-color: transparent
+  ),
+  columns: (
+    padding: get($default-table-values, "top") get($default-table-values, "left"),
+    font-weight: get($default-table-values, "font-weight"),
+    text-align: get($default-table-values, "text-align")
+  )
+);
+
+$default-tbody: (
+  border: get($default-table-values, "border"),
+  background-color: transparent,
+  stripes: (
+    background-color: tint(black, 25%),
+  ),
+  columns: (
+    padding: get($default-table-values, "top") get($default-table-values, "left"),
+    text-align: left
+  )
+);
+
+$default-caption: (
+  padding: get($default-table-values, "top") get($default-table-values, "left"),
+  font-weight: get($default-table-values, "font-weight"),
+);
+
+table{
+  @include print-css($default-table);
+  // table-layout: fixed;
+}
+
+thead,
+tfoot{
+  @include print-css($default-thead-tfoot);
+  tr{
+    @include print-css($default-thead-tfoot, "row");
+  }
+  th,
+  td{
+    @include print-css($default-thead-tfoot, "columns");
+  }
+}
+
+tbody{
+  @include print-css($default-tbody);
+
+  th,
+  td{
+    @include print-css($default-tbody, "columns");
+  }
+}
+
+caption{
+  @include print-css($default-caption);
+}

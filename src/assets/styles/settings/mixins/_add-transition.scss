@@ -1,0 +1,3 @@
+@mixin add-transition($duration: animations("duration"), $easing: animations("easing")){
+  transition: all $duration $easing;
+}

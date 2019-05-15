@@ -1,0 +1,41 @@
+// @author : Pierre Lovenfosse
+// @contributors : -
+/*===================================================================================*/
+/*  Base | Lists | Partial
+/*===================================================================================*/
+
+$default-lists: (
+  margin-left: 1.25rem,
+  margin-bottom: 1rem,
+  list-style-position: outside
+);
+
+$default-lists-item: (
+  font-size: inherit
+);
+
+$default-deflist: (
+  margin-bottom: 1rem,
+  list-style-position: outside
+);
+
+$default-defterm: (
+  margin-bottom: 0.3rem,
+  font-weight: get($font-weights, "bold")
+);
+
+ul, ol{
+  @include print-css($default-lists);
+}
+
+li{
+  @include print-css($default-lists-item);
+}
+
+dl{
+  @include print-css($default-deflist);
+}
+
+dt{
+  @include print-css($default-defterm);
+}

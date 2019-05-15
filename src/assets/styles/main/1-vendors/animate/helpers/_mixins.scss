@@ -1,0 +1,13 @@
+/*===================================================================================*/
+/*    Animate.CSS - Mixin
+/*===================================================================================*/
+
+@mixin animate-prefixer($property, $value...) {
+    #{$property}: unquote('#{$value}');
+}
+
+@mixin animate-keyframe($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

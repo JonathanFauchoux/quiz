@@ -1,0 +1,3 @@
+@function font-weights($value){
+  @return get($font-weights, $value);
+}

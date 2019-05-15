@@ -1,0 +1,12 @@
+/// Use this mixin to limit css properties only for a specific breakpoint
+/// @group Global
+/// @author Pierre Lovenfosse
+/// @param {String} $media - Corresponds to a key from $breakpoints
+/// @see $breakpoints
+
+@mixin media($media){
+  $media-query: get($breakpoints, $media);
+  @media #{$media-query}{
+    @content;
+  }
+}
