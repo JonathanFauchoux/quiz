@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["no-page"],{"799c":function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{staticClass:"no-page-view"},[n._v("\n  404 PAGE VIEW\n")])},c=[],i={name:"NoPageView"},s=i,o=(t("db3f"),t("2877")),u=Object(o["a"])(s,a,c,!1,null,null,null);e["default"]=u.exports},db3f:function(n,e,t){"use strict";var a=t("fdc5"),c=t.n(a);c.a},fdc5:function(n,e,t){}}]);
-//# sourceMappingURL=no-page.js.map

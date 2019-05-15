@@ -1,14 +1,9 @@
 <template>
-  <div id="app" class="app">
-    <div class="wrapper" v-if="loaded">
-      <!-- Header -->
-      <TheHeader />
-      <!-- Main -->
+  <div class="app">
+    <div class="wrapper">
       <main class="main">
-        <router-view class="page" />
+        <HomeView></HomeView>
       </main>
-      <!-- Footer -->
-      <TheFooter />
     </div>
   </div>
 </template>
@@ -19,8 +14,8 @@ import scrollMonitor from 'scrollmonitor'
 import { debounce } from 'lodash'
 
 import { addListeners } from '@helpers/event'
-import TheHeader from '@components/TheHeader'
-import TheFooter from '@components/TheFooter'
+
+import HomeView from '@/views/HomeView'
 
 const breakpoints = [
   { name: 'small', min: 0, max: 767 },
@@ -32,12 +27,10 @@ const breakpoints = [
 export default {
   data () {
     return {
-      loaded: false
     }
   },
   components: {
-    TheHeader,
-    TheFooter
+    HomeView
   },
   computed: {
     ...mapGetters({
