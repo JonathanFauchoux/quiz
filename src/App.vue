@@ -21,7 +21,6 @@ import { debounce } from 'lodash'
 import { addListeners } from '@helpers/event'
 import TheHeader from '@components/TheHeader'
 import TheFooter from '@components/TheFooter'
-import Provider from '@api/provider'
 
 const breakpoints = [
   { name: 'small', min: 0, max: 767 },
@@ -47,10 +46,7 @@ export default {
     })
   },
   created () {
-    Provider.common.getCommonContent().then(data => {
-      this.updateCommonContent(data)
-      this.loaded = true
-    })
+
   },
   mounted () {
     addListeners(window, 'resize', this.debouncedMethod)
